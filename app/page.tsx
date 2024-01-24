@@ -5,13 +5,13 @@ import { TopPlatform } from "@/components/top-platform";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-4 p-4">
-      <div className="flex gap-4 justify-evenly flex-wrap flex-start">
+    <div className="flex flex-row gap-4 p-4 justify-evenly">
+      <div className="flex flex-col gap-4">
         <SalesTrend />
-        <Chart />
-      </div>
-      <div className="flex gap-4">
         <LastOrder />
+      </div>
+      <div className="flex h-fit gap-4 flex-col">
+        <Chart />
         <TopPlatform />
       </div>
     </div>

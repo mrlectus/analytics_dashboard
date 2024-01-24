@@ -27,7 +27,7 @@ export const TopPlatformItem = ({ item }: { item: TPlatform }) => {
 };
 export const TopPlatform = () => {
   return (
-    <Card className="w-full md:w-[50%] p-3">
+    <Card className="p-3">
       <CardTitle className="text-md px-6 flex justify-between">
         <span>Top Content</span>
         <Link href="#" className="text-[#34CAA5]">
