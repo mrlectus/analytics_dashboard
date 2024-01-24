@@ -75,7 +75,7 @@ export const data: ChartData<"bar"> = {
 
 export const SalesTrend = () => {
   return (
-    <Card className="h-fit">
+    <Card className="w-[50%]">
       <CardTitle className="m-5 text-md flex justify-between items-center">
         <span>Sales Trends</span>
         <div className="flex font-normal gap-1 text-xs items-center">
@@ -86,7 +86,7 @@ export const SalesTrend = () => {
         </div>
       </CardTitle>
       <CardContent>
-        <Bar options={options} data={data} width={500} height={220} />
+        <Bar options={options} data={data} />
       </CardContent>
     </Card>
   );
