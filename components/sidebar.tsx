@@ -25,6 +25,7 @@ const SVGLink = [
   <SVGIcon4 />,
   <SVGIcon5 />,
 ];
+
 export const SideBar = () => {
   const { setTheme } = useTheme();
   return (
@@ -39,7 +40,7 @@ export const SideBar = () => {
               <Link
                 key={item.key}
                 href="#"
-                className="hover:border-r-4  w-full flex hover:border-r-black justify-center"
+                className="hover:border-r-4  w-full flex hover:border-r-black justify-center dark:hover:border-r-white"
               >
                 {item}
               </Link>
