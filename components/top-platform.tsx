@@ -36,7 +36,7 @@ export const TopPlatform = () => {
       </CardTitle>
       <CardContent>
         {top_platform.map((item) => {
-          return <TopPlatformItem item={item} />;
+          return <TopPlatformItem key={item.id} item={item} />;
         })}
       </CardContent>
     </Card>

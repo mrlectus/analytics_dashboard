@@ -37,6 +37,7 @@ export const SideBar = () => {
           {SVGLink.map((item) => {
             return (
               <Link
+                key={item.key}
                 href="#"
                 className="hover:border-r-4  w-full flex hover:border-r-black justify-center"
               >

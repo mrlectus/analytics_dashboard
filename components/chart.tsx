@@ -56,7 +56,7 @@ export const Chart = () => {
   return (
     <div className="md:grid md:grid-cols-2 md:grid-rows-2 md:gap-3 h-fit flex gap-2 flex-wrap">
       {chart.map((item) => {
-        return <ChartItem item={item} />;
+        return <ChartItem key={item.id} item={item} />;
       })}
     </div>
   );
