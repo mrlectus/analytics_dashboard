@@ -78,7 +78,7 @@ export const SalesTrend = () => {
     <Card className="">
       <CardTitle className="m-5 text-md flex justify-between items-center">
         <span>Sales Trends</span>
-        <div className="flex font-normal gap-1 text-xs items-center">
+        <div className="flex font-semibold gap-1 text-xs items-center">
           Sort by:
           <span className="border rounded-full flex items-center gap-1 p-2 cursor-pointer">
             Weekly <SVGArrowDown />

@@ -54,7 +54,7 @@ const ChartItem = ({ item }: { item: Tchart }) => {
 
 export const Chart = () => {
   return (
-    <div className="grid grid-cols-2 grid-rows-2 gap-3 h-fit">
+    <div className="md:grid md:grid-cols-2 md:grid-rows-2 md:gap-3 h-fit flex gap-2 flex-wrap">
       {chart.map((item) => {
         return <ChartItem item={item} />;
       })}

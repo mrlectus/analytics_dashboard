@@ -25,6 +25,7 @@ export const SVGBugger = () => {
       viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="dark:bg-blue-900 dark:rounded-full"
     >
       <path
         d="M15.24 10H13.34C11.15 10 10 11.15 10 13.33V15.23C10 17.41 11.15 18.56 13.33 18.56H15.23C17.41 18.56 18.56 17.41 18.56 15.23V13.33C18.57 11.15 17.42 10 15.24 10Z"
@@ -253,9 +254,14 @@ export const SVGIcon5 = () => {
   );
 };
 
-export const SVGLight = () => {
+export const SVGLight = ({
+  onClick,
+}: {
+  onClick: React.MouseEventHandler<SVGSVGElement>;
+}) => {
   return (
     <svg
+      onClick={onClick}
       width="30"
       height="30"
       viewBox="0 0 30 30"
@@ -315,9 +321,14 @@ export const SVGLight = () => {
   );
 };
 
-export const SVGDark = () => {
+export const SVGDark = ({
+  onClick,
+}: {
+  onClick: React.MouseEventHandler<SVGSVGElement>;
+}) => {
   return (
     <svg
+      onClick={onClick}
       width="30"
       height="30"
       viewBox="0 0 30 30"
@@ -524,7 +535,7 @@ export const SVGBell = () => {
       viewBox="0 0 30 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6"
+      className="w-6 h-6 dark:bg-white dark:rounded-full"
     >
       <path
         fillRule="evenodd"
@@ -713,7 +724,7 @@ export const SVGSearch = ({ className }: { className?: string }) => {
   );
 };
 
-export const SVGArrowDown = () => {
+export const SVGArrowDown = ({ className }: { className?: string }) => {
   return (
     <svg
       width="14"
@@ -721,6 +732,7 @@ export const SVGArrowDown = () => {
       viewBox="0 0 14 8"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M0.198412 0.206748C0.43891 -0.0438557 0.815252 -0.0666378 1.08045 0.138402L1.15643 0.206748L7 6.29553L12.8436 0.206748C13.0841 -0.0438557 13.4604 -0.0666378 13.7256 0.138402L13.8016 0.206748C14.0421 0.457352 14.064 0.849506 13.8672 1.12585L13.8016 1.20502L7.47901 7.79325C7.23851 8.04386 6.86217 8.06664 6.59697 7.8616L6.52099 7.79325L0.198412 1.20502C-0.0661372 0.929352 -0.0661372 0.482412 0.198412 0.206748Z"

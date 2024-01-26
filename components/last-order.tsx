@@ -91,12 +91,12 @@ export const columns: ColumnDef<TOrders>[] = [
     header: "Name",
     cell: ({ row }) => {
       return (
-        <div className="flex gap-1 items-center">
+        <div className="flex gap-2 items-center">
           <Avatar className="w-5 h-5">
             <AvatarImage src={row.original.photo} />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
-          <span>{row.original.name}</span>
+          <span className="font-semibold">{row.original.name}</span>
         </div>
       );
     },
@@ -106,7 +106,7 @@ export const columns: ColumnDef<TOrders>[] = [
     header: "Date",
     cell: ({ row }) => {
       return (
-        <span className="text-black/70">
+        <span className="text-black/70 dark:text-white">
           {format(row.original.date!, "MMMM dd, yyyy")}
         </span>
       );
@@ -117,7 +117,7 @@ export const columns: ColumnDef<TOrders>[] = [
     header: "Amount",
     cell: ({ row }) => {
       return (
-        <span className="text-black font-semibold">
+        <span className="text-black font-semibold dark:text-white">
           {formatCurrency(row.original.amount).toString().replace(".0", "")}
         </span>
       );
@@ -131,8 +131,8 @@ export const columns: ColumnDef<TOrders>[] = [
       return (
         <span
           className={clsx({
-            "text-[#ED544E]": row.original.status === "refund",
-            "text-[#34CAA5]": row.original.status === "paid",
+            "font-bold text-[#ED544E]": row.original.status === "refund",
+            "font-bold text-[#34CAA5]": row.original.status === "paid",
           })}
         >
           {row.original.status}
@@ -145,7 +145,7 @@ export const columns: ColumnDef<TOrders>[] = [
     header: "Action",
     cell: () => {
       return (
-        <span className="flex gap-2 items-center">
+        <span className="flex gap-2 items-center font-semibold">
           <SVGIcon7 /> View
         </span>
       );
@@ -158,7 +158,7 @@ export const LastOrder = () => {
     <Card className="pt-4 h-fit">
       <CardTitle className="text-md px-6 flex justify-between">
         <span>Last Orders</span>
-        <Link href="#" className="text-[#34CAA5]">
+        <Link href="#" className="font-bold text-[#34CAA5]">
           See All
         </Link>
       </CardTitle>

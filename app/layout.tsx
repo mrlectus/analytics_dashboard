@@ -4,6 +4,7 @@ import "./globals.css";
 import React from "react";
 import { SideBar } from "@/components/sidebar";
 import { NavBar } from "@/components/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -18,12 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/next.svg" sizes="any" />
       </head>
       <body className={jakarta.className}>
-        <React.Fragment>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
           <div className="flex flex-row">
             <SideBar />
             <main className="flex flex-col flex-1 ml-20">
@@ -33,7 +39,7 @@ export default function RootLayout({
               {children}
             </main>
           </div>
-        </React.Fragment>
+        </ThemeProvider>
       </body>
     </html>
   );

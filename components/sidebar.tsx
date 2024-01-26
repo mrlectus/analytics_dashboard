@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import {
   SVGBugger,
@@ -14,6 +15,8 @@ import {
   SVGSettings,
 } from "./icons/icons";
 
+import { useTheme } from "next-themes";
+
 const SVGLink = [
   <SVGBugger />,
   <SVGIcon1 />,
@@ -23,8 +26,9 @@ const SVGLink = [
   <SVGIcon5 />,
 ];
 export const SideBar = () => {
+  const { setTheme } = useTheme();
   return (
-    <div className="w-[76px] fixed z-10 border border-t border-l border-b flex flex-col justify-between h-screen bg-[#F7F8FA]">
+    <div className="w-[76px] fixed z-10 border border-t border-l border-b flex flex-col justify-between h-screen bg-[#F7F8FA] dark:bg-black">
       <div className="flex flex-col justify-center items-center mt-5">
         <div>
           <SVGLogo />
@@ -34,15 +38,15 @@ export const SideBar = () => {
             return (
               <Link
                 href="#"
-                className="hover:border-r-4 w-full flex hover:border-r-black justify-center"
+                className="hover:border-r-4  w-full flex hover:border-r-black justify-center"
               >
                 {item}
               </Link>
             );
           })}
-          <div className="flex flex-col gap-2 border rounded-full p-2">
-            <SVGLight />
-            <SVGDark />
+          <div className="flex flex-col dark:flex-col-reverse gap-2 border rounded-full p-2">
+            <SVGLight onClick={() => setTheme("light")} />
+            <SVGDark onClick={() => setTheme("dark")} />
           </div>
         </div>
       </div>
